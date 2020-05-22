@@ -1,0 +1,17 @@
+#!/bin/bash
+
+sudo apt-get install -y git neovim
+mkdir -p ~/.config/nvim
+git clone https://github.com/treycaliva/dotfiles $HOME/dotfiles
+
+ln -s $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
+ln -s $HOME/dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
+ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
+
+# Install tat bash script
+sudo chmod +x /usr/local/bin/tat
+sudo ln -s $HOME/dotfiles/tmux/tat /usr/local/bin/tat
+
+# Install Vim Plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
