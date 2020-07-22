@@ -9,6 +9,8 @@ ln -s $HOME/dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 
+git clone https://github.com/srcery-colors/srcery-tmux/ ~/.tmux/themes/srcery-tmux
+
 # Install tat bash script
 sudo chmod +x /usr/local/bin/tat
 sudo ln -s $HOME/dotfiles/tmux/tat /usr/local/bin/tat
